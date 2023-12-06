@@ -50,8 +50,27 @@ el cual hara que se visualice como un mensaje en rojo (danger) en lugar del erro
 _De la actividad relacionada a BDD e historias de usuario crea definiciones de pasos que te permitan escribir los siguientes pasos en un escenario de RottenPotatoes:_
 
 Given the movie "Inception" exists
-	And it has 5 reviews
-	And its average review score is 3.5
+```cucumber
+Given(/^the movie "(.*?)" exists$/) do |movie_title|
+  Movie.create(title: movie_title)
+end
+```
+And it has 5 reviews
+```cucumber
+And(/^it has (\d+) reviews$/) do |review_count|
+  movie = Movie.last # ultima película creada
+  # agregar reseñas a la película
+  review_count.to_i.times { movie.reviews.create }
+end
+```
+And its average review score is 3.5
+```cucumber
+And(/^its average review score is ([\d.]+)$/) do |average_score|
+  movie = Movie.last # última película creada
+  # puntuación promedio
+  movie.update(average_score: average_score.to_f)
+end
+```
 
 _De la actividad relacionadas a BDD e historias de usuario, supongamos que en RottenPotatoes, en lugar de utilizar seleccionar la calificación y la fecha de estreno, se opta por rellenar el formulario en blanco. Primero, realiza los cambios apropiados al escenario. Enumera las definiciones de pasos a partir que Cucumber invocaría al pasar las pruebas de estos nuevos pasos. (Recuerda: rails generate cucumber:install)_
 
