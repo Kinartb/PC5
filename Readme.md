@@ -47,7 +47,41 @@ el cual hara que se visualice como un mensaje en rojo (danger) en lugar del erro
 
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/ini4.png)
 
+_De la actividad relacionada a BDD e historias de usuario crea definiciones de pasos que te permitan escribir los siguientes pasos en un escenario de RottenPotatoes:_
 
+Given the movie "Inception" exists
+	And it has 5 reviews
+	And its average review score is 3.5
+
+_De la actividad relacionadas a BDD e historias de usuario, supongamos que en RottenPotatoes, en lugar de utilizar seleccionar la calificación y la fecha de estreno, se opta por rellenar el formulario en blanco. Primero, realiza los cambios apropiados al escenario. Enumera las definiciones de pasos a partir que Cucumber invocaría al pasar las pruebas de estos nuevos pasos. (Recuerda: rails generate cucumber:install)_
+
+_De la actividad relacionadas a BDD e historias de usuario indica una lista de pasos como los de la siguiente figura_
+
+_Para implementar el siguiente paso_
+
+When / I delete the movie: "(.*)"/ do |title|
+
+_Basándose en el siguiente fichero de especificaciones (specfile), ¿a qué métodos deberían responder las instancias de F1 para pasar las pruebas?_
+```
+require 'f1'
+	describe F1 do
+                   describe "a new f1" do
+                      before :each do ; @f1 = F1.new ; end
+                          it "should be a pain in the butt" do
+                         @f1.should be_a_pain_in_the_butt
+                      end
+                it "should be awesome" do
+                  @f1.should be_awesome
+              end
+               it "should not be nil" do
+                 @f1.should_not  be_nil
+            end
+           it "should not be the empty string" do
+               @f1.should_not == ""
+            end
+          end
+end
+```
 ## PARTE 2
 
 ## PARTE 3
