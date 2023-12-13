@@ -4,9 +4,8 @@ Given /the following movies exist/ do |movies_table|
   movies_table.hashes.each do |movie|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
-    Movie.create!(movie)
   end
-  #pending "Fill in this step in movie_steps.rb"
+  pending "Fill in this step in movie_steps.rb"
 end
 
 Then /(.*) seed movies should exist/ do | n_seeds |
@@ -19,8 +18,7 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  #pending "Fill in this step in movie_steps.rb"
-  expect(page.body.index(e1)).to be < page.body.index(e2)
+  pending "Fill in this step in movie_steps.rb"
 end
 
 # Make it easier to express checking or unchecking several boxes at once
@@ -31,33 +29,18 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   # HINT: use String#split to split up the rating_list, then
   #   iterate over the ratings and reuse the "When I check..." or
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
-  rating_list.split(', ').each do |rating|
-    step %{I #{uncheck}check "ratings_#{rating}"}
-  end
-  #pending "Fill in this step in movie_steps.rb"
+  pending "Fill in this step in movie_steps.rb"
 end
 
 # Part 2, Step 3
 Then /^I should (not )?see the following movies: (.*)$/ do |no, movie_list|
   # Take a look at web_steps.rb Then /^(?:|I )should see "([^"]*)"$/
-  #pending "Fill in this step in movie_steps.rb"
-  movies = movie_list.split(',').map(&:strip).map { |m| m.gsub(/\"/, '') }
-  movies.each do |movie|
-    if no.nil?
-      expect(page).to have_content(movie)
-    else
-      expect(page).not_to have_content(movie)
-    end
-  end
+  pending "Fill in this step in movie_steps.rb"
 end
 
 Then /I should see all the movies/ do
   # Make sure that all the movies in the app are visible in the table
-  #pending "Fill in this step in movie_steps.rb"
-  all_movies = Movie.pluck(:title)
-  all_movies.each do |movie|
-    expect(page).to have_content(movie)
-  end
+  pending "Fill in this step in movie_steps.rb"
 end
 
 ### Utility Steps Just for this assignment.
@@ -80,4 +63,33 @@ Then /complete the rest of of this scenario/ do
   # You should leave this block inside movie_steps, but replace
   # the line in your scenarios with the appropriate steps.
   fail "Remove this step from your .feature files"
+end
+
+# features/step_definitions/movie_steps.rb
+
+Given("the user is on the Add New Movie page") do
+  visit new_movie_path
+end
+
+When("the user fills in the form with:") do |table|
+  # Assuming your form fields have 'id' attributes matching the table headers
+  table.hashes.each do |row|
+    fill_in row['Field'], with: row['Value']
+  end
+end
+
+When("the user submits the form") do
+  click_button 'Create Movie' # Adjust the button text based on your form
+end
+
+Then("the user should see the movie details on the movie page") do
+  # Adjust the selector based on how you display movie details
+  expect(page).to have_content('Inception')
+  expect(page).to have_content('PG-13')
+  expect(page).to have_content('2010-07-16')
+end
+
+Then("the movie list should include {string}") do |movie_title|
+  # Adjust the selector based on how your movie list is displayed
+  expect(page).to have_content(movie_title)
 end
