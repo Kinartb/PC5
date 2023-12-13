@@ -103,8 +103,13 @@ end
 ```
 ## PARTE 2
 
+Cuando se ejecuta `bundle exec cucumber` por primera vez se optiene esta forma y no hay errores porque se encuentra el `pending` agregado es decir que está en espera para ser implementado así no marque error
+
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd1.png)
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd2.png)
+
+Vemos que el codigo al quitar los pending y tratar de solucionar alguno de los errores se optiene en verde (pasa) y en rojo (error de prueba).
+
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd3.png)
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd4.png)
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd5.png)
