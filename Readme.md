@@ -103,4 +103,8 @@ end
 ```
 ## PARTE 2
 
-## PARTE 3
+![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd1.png)
+![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd2.png)
+![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd3.png)
+![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd4.png)
+![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd5.png)
