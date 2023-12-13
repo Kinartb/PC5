@@ -112,4 +112,7 @@ Vemos que el codigo al quitar los pending y tratar de solucionar alguno de los e
 
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd3.png)
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd4.png)
+
+Al terminar de implementar todos las pruebas correctamente vemos que todas de ellas han pasado
+
 ![](https://github.com/Kinartb/PC5/blob/main/Imagenes/bdd5.png)
